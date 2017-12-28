@@ -1,0 +1,24 @@
+{
+  "name": "navcoin-updater",
+  "version": "1.0.0",
+  "description": "A NavCoin value updater for the subreddit www.reddit.com/r/navcoin",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/botanki/navcoin-updater.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/botanki/navcoin-updater/issues"
+  },
+  "homepage": "https://github.com/botanki/navcoin-updater#readme",
+  "dependencies": {
+    "coinmarketcap-api": "^1.0.0",
+    "express": "^4.16.2"
+  }
+}
