@@ -1,17 +1,20 @@
 # navcoin-updater
-A Nav Coin value updater for the offical Nav Coin subreddit (www.reddit.com/r/navcoin)
+A Nav Coin value updater for the offical Nav Coin subreddit (www.reddit.com/r/navcoin).
 
 # Installation:
-1. Clone the repository
-2. Navigate to the project's directory
-3. `npm install`
-4. Start the application with `node app`
+1. Clone the repository.
+2. Navigate to the project's directory.
+3. `npm install`.
+4. Change name of file `credentials.example.json` to `credentials.json`.
+5. Insert your Reddit credentials in file `credentials.json`.
+
+# Usage:
+1. Navigate to the project's directory.
+2. Start the application with `node app`.
 
 # Technical specifications:
-- Node.js
-- not-an-aardvark's Snoowrap Reddit API Wrapper for Node (https://github.com/not-an-aardvark/snoowrap)
-- tiaanduplessis's Coin Market Cap API wrapper for Node (https://github.com/tiaanduplessis/coinmarketcap-api)
+- Node.js (recommended version: v7.6+)
 
 # Collaborators:
-- Karzan Botani (https://github.com/botanki)
 - Dennis Majvall (https://github.com/DennisMajvall)
+- Karzan Botani (https://github.com/botanki)
