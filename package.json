@@ -10,15 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/botanki/navcoin-updater.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Karzan Botani (https://github.com/botanki)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/botanki/navcoin-updater/issues"
   },
   "homepage": "https://github.com/botanki/navcoin-updater#readme",
   "dependencies": {
+    "asleep": "^1.0.3",
     "coinmarketcap-api": "^1.0.0",
-    "express": "^4.16.2"
+    "puppeteer": "^0.13.0"
   }
 }
