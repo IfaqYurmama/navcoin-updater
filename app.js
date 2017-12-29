@@ -3,11 +3,11 @@ const coinmarketcap		= new (require('coinmarketcap-api'))(),
 			puppeteer				= require('puppeteer'),
 			credentials			= require('./credentials.json');
 
-/* global variables */
+// global variables
 const subreddit = 'navcoin';
 let btc, usd;
 
-/* fetch Nav Coin BTC and USD values */
+// fetch Nav Coin BTC and USD values
 function getNav() {
   return coinmarketcap.getTicker({limit: 1, currency: 'nav-coin'}).then((res) => {
     btc = res[0].price_btc;
@@ -17,7 +17,7 @@ function getNav() {
 }
 
 async function updateCSS() {
-  const browser = await puppeteer.launch().catch(console.error),
+  const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']}).catch(console.error),
 				page 	  = await browser.newPage().catch(console.error);
 
 	// Start asynchronous currency fetching
@@ -25,7 +25,7 @@ async function updateCSS() {
 
 	await page.goto(`https://www.reddit.com/r/${subreddit}/about/stylesheet/`).catch(console.error);
 
-	// LOGIN BRAH
+	// login
 	await page.evaluate((user) => {
 		$('#login_login-main input[name="user"]').val(user.username);
 		$('#login_login-main input[name="passwd"]').val(user.password);
@@ -34,7 +34,7 @@ async function updateCSS() {
 
 	await asleep(2000); // change to 5 later, brah
 
-	// GET CSS, BRAH
+	// get css
 	let css = await page.evaluate(() => $('#stylesheet_contents').val()).catch(console.error);
 
 	// make sure the Currency has finished fetching
@@ -44,7 +44,7 @@ async function updateCSS() {
 
 	css = css.replace(/(content: ")(.*)(";\/\*custom-header-price-node\*\/)/, '$1' + 'USD: ' + usd + ' BTC: ' + btc + '$3');
 
-	// UPDATE CSS, YO
+	// update css
 	await page.evaluate((style) => {
 		$('#stylesheet_contents').val(style);
 		$('input[name="reason"]').val('BOT: auto-update price in header.');
@@ -54,7 +54,8 @@ async function updateCSS() {
   await browser.close().catch(console.error);
 };
 
-/* Update the CSS at startup */
+// update css @ startup
 updateCSS();
-/* update prices every 10 minutes */
+
+// update prices every 10 minutes
 setInterval(updateCSS, 1000 * 60 * 10);
