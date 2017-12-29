@@ -4,7 +4,7 @@ const coinmarketcap		= new (require('coinmarketcap-api'))(),
 			credentials			= require('./credentials.json');
 
 /* global variables */
-const subreddit = 'testerhester123';
+const subreddit = 'navcoin';
 let btc, usd;
 
 /* fetch Nav Coin BTC and USD values */
