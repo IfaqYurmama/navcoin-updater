@@ -32,10 +32,10 @@ async function updateCSS() {
 		$('#login_login-main button[type="submit"]').click();
   }, credentials).catch(console.error);
 
-	await asleep(2000); // change to 5 later, brah
+	await asleep(5000);
 
 	// get css
-	let css = await page.evaluate(() => $('#stylesheet_contents').val()).catch(console.error);
+	let css = await page.evaluate(() => { return $('#stylesheet_contents').val() }).catch(console.error);
 
 	// make sure the Currency has finished fetching
 	await waitForCurrencies;
