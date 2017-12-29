@@ -35,7 +35,7 @@ async function updateCSS() {
 	await asleep(2000); // change to 5 later, brah
 
 	// GET CSS, BRAH
-	let css = await page.evaluate(() => $('#stylesheet_contents').val()).catch(console.error);
+	let css = await page.evaluate(() => { return $('#stylesheet_contents').val() }).catch(console.error);
 
 	// make sure the Currency has finished fetching
 	await waitForCurrencies;
