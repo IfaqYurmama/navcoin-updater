@@ -10,7 +10,7 @@ A Nav Coin value updater for the offical Nav Coin subreddit (www.reddit.com/r/na
 6. Add following snippet to the stylesheet. Do *not* edit the 'content' property OR the comment:
 `/* custom header navcoin price */
 .hover.pagename.redditname::after{
-    content: "USD: 3.068 BTC: 0.00023037";/*custom-header-price-node*/
+    content: "";/*custom-header-price-node*/
     font-size: 14px;
     color: rgba(255,255,255,0.8);
     margin-top: 50px;

@@ -37,8 +37,6 @@ async function updateCSS() {
 	// get css
 	let css = await page.evaluate(() => { return $('#stylesheet_contents').val() }).catch(console.error);
 
-  await page.screenshot({ path:'hej.png'});
-
   if (!css) {
     console.log('could not read css');
     return;
