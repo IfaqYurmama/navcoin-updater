@@ -32,10 +32,17 @@ async function updateCSS() {
 		$('#login_login-main button[type="submit"]').click();
   }, credentials).catch(console.error);
 
-	await asleep(5000);
+	await asleep(1000 * 10);
 
 	// get css
 	let css = await page.evaluate(() => { return $('#stylesheet_contents').val() }).catch(console.error);
+
+  await page.screenshot({ path:'hej.png'});
+
+  if (!css) {
+    console.log('could not read css');
+    return;
+  }
 
 	// make sure the Currency has finished fetching
 	await waitForCurrencies;
@@ -51,11 +58,12 @@ async function updateCSS() {
 		$('.sheets button[name="save"]').click();
 	}, css).catch(console.error);
 
+  await asleep(1000 * 5);
   await browser.close().catch(console.error);
 };
 
 // update css @ startup
 updateCSS();
 
-// update prices every 10 minutes
-setInterval(updateCSS, 1000 * 60 * 10);
+// update prices every 14 minutes
+setInterval(updateCSS, 1000 * 60 * 14);
