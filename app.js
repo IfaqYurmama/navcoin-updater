@@ -23,14 +23,20 @@ async function updateCSS() {
 	// Start asynchronous currency fetching
 	let waitForCurrencies = getNav();
 
-	await page.goto(`https://www.reddit.com/r/${subreddit}/about/stylesheet/`).catch(console.error);
+  await page.goto('https://www.reddit.com').catch(console.error);
 
-	// login
-	await page.evaluate((user) => {
-		$('#login_login-main input[name="user"]').val(user.username);
-		$('#login_login-main input[name="passwd"]').val(user.password);
-		$('#login_login-main button[type="submit"]').click();
+  await asleep(1000 * 10);
+
+  // login
+  await page.evaluate((user) => {
+    $('#login_login-main input[name="user"]').val(user.username);
+    $('#login_login-main input[name="passwd"]').val(user.password);
+    $('#login_login-main button[type="submit"]').click();
   }, credentials).catch(console.error);
+
+  await asleep(1000 * 10);
+
+	await page.goto(`https://www.reddit.com/r/${subreddit}/about/stylesheet/`).catch(console.error);
 
 	await asleep(1000 * 10);
 
@@ -57,7 +63,8 @@ async function updateCSS() {
 	}, css).catch(console.error);
 
   await asleep(1000 * 5);
-  await browser.close().catch(console.error);
+
+  await browser.close().catch(console.error)
 };
 
 // update css @ startup
