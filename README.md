@@ -8,7 +8,8 @@ A Nav Coin value updater for the offical Nav Coin subreddit (www.reddit.com/r/na
 4. Change name of file `credentials.example.json` to `credentials.json`.
 5. Insert your Reddit credentials in file `credentials.json`.
 6. Add following snippet to the stylesheet. Do *not* edit the 'content' property OR the comment:
-`/* custom header navcoin price */
+```
+/* custom header navcoin price */
 .hover.pagename.redditname::after{
     content: "";/*custom-header-price-node*/
     font-size: 14px;
@@ -20,7 +21,8 @@ A Nav Coin value updater for the offical Nav Coin subreddit (www.reddit.com/r/na
     border-radius: 5px;
     padding: 0 5px 1px;
     text-shadow: 1px 1px 2px gray;
-}`
+}
+```
 
 # Usage:
 1. Navigate to the project's directory.
