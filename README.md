@@ -5,8 +5,8 @@ A Nav Coin value updater for the offical Nav Coin subreddit (www.reddit.com/r/na
 1. Clone the repository: `git clone https://github.com/botanki/navcoin-updater.git`
 2. Navigate to the project's directory.
 3. `npm install`.
-4. Change name of file `credentials.example.json` to `credentials.json`.
-5. Insert your Reddit credentials in file `credentials.json`.
+4. Change the name of the file `credentials.example.json` to `credentials.json`.
+5. Insert your Reddit credentials to the file `credentials.json`.
 6. Add following snippet to the stylesheet. Do *not* edit the 'content' property OR the comment:
 ```
 /* custom header navcoin price */
