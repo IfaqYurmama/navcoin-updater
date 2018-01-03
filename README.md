@@ -2,7 +2,7 @@
 A Nav Coin value updater for the offical Nav Coin subreddit (www.reddit.com/r/navcoin).
 
 # Installation:
-1. Clone the repository.
+1. Clone the repository: `git clone https://github.com/botanki/navcoin-updater.git`
 2. Navigate to the project's directory.
 3. `npm install`.
 4. Change name of file `credentials.example.json` to `credentials.json`.
